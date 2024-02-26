@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | FAQ accordion</title>
+
+  <style>
+    @font-face {
+      font-family: 'WorkSans';
+      src: local('WorkSans-VariableFont_wght'), 
+      url('assets/fonts/WorkSans-VariableFont_wght.ttf');
+    }
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    body {
+      padding: 0;
+      background-color: #F9EEFF;
+      font-family: 'WorkSans', sans-serif;
+    }
+    @media (min-width: 768px) {
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        justify-content: center;
+        height: 100vh;
+      }
+    }
+    .bg {
+      position:fixed;
+      bottom: 60%;
+      width: 100%;
+      z-index: -1;
+    }
+    .container {
+      width: 850px;
+      height: 800px;
+      background-color: white;
+      z-index: 1;
+      padding-left: 4rem;
+      padding-right: 4rem;
+      padding-top: 2rem;
+      border-radius: 14px;
+      box-shadow: 0 20px 30px rgba(0, 0, 0, 0.10);
+    }
+    .title {
+      display: flex;
+      flex-direction: row;
+    }
+    .title {
+      font-weight: 700;
+      font-size: 28px;
+      line-height: 34px;  
+      color: #3A1219;
+      margin-bottom: 20px;
+      margin-top: 20px;
+      margin-left: 20px;
+    }
+    .star {
+      margin-right: 25px;
+    }
+    .question {
+      font-weight: bold;
+      font-size: 25px;
+      color: #3A1219;
+      line-height: 80px;
+    }
+    .qa {
+      display: flex;
+      flex-direction: column;
+      border-bottom: 1px solid #E6E6E6;
+      height: auto;
+      flex-grow: 1;
+    }
+    .qa:last-child {
+      border-bottom: none;
+    }
+    .qa-item {
+      min-height: 80px;
+      display: flex;
+      flex-direction: row;
+      position: relative;
+    }
+    .icon {
+      position: absolute;
+      right: 0%;
+      top: 30%;
+    }
+    .qa-item:hover {
+      cursor: pointer;
+    }
+    .qa-item:hover > .question {
+      color: #AF23EE;
+    }
+    .answer {
+      margin-bottom: 20px;
+      font-size: 22px;
+      color: #9467ac;
+      display: none;
+    }
+    .fold {
+      display: none;
+    }
+
+  </style>
+</head>
+<body>
+  <img class="bg" src="assets/images/background-pattern-desktop.svg" alt="pattern">
+  <div class="container">
+    <div class="title">
+      <img class="star" src="assets/images/icon-star.svg" alt="star">
+      <h1>FAQs</h1>
+    </div>
+    <div class="qa">
+      <div class="qa-item" onclick="toggleAnswer(this)">
+        <p class="question">What is Frontend Mentor, and how will it help me?</p>
+        <img class="icon" src="assets/images/icon-plus.svg" alt="icon-plus">
+      </div>
+      <div class="answer">Frontend Mentor offers realistic coding challenges to help developers improve their 
+        frontend coding skills with projects in HTML, CSS, and JavaScript. It's suitable for 
+        all levels and ideal for portfolio building.</div>
+    </div>
+    <div class="qa">
+      <div class="qa-item" onclick="toggleAnswer(this)">
+        <p class="question">Is Frontend Mentor free?</p>
+        <img class="icon" src="assets/images/icon-plus.svg" alt="icon-plus">
+      </div>
+      <div class="answer ">Yes, Frontend Mentor offers both free and premium coding challenges, with the free 
+        option providing access to a range of projects suitable for all skill levels.</div>
+    </div>
+    <div class="qa">
+      <div class="qa-item" onclick="toggleAnswer(this)">
+        <p class="question">Can I use Frontend Mentor projects in my portfolio?</p>
+        <img class="icon" src="assets/images/icon-plus.svg" alt="icon-plus">
+      </div>
+      <div class="answer">Yes, you can use projects completed on Frontend Mentor in your portfolio. It's an excellent
+        way to showcase your skills to potential employers!</div>
+    </div>
+    <div class="qa">
+      <div class="qa-item" onclick="toggleAnswer(this)">
+        <p class="question">How can I get help if I'm stuck on a challenge?</p>
+        <img class="icon" src="assets/images/icon-plus.svg" alt="icon-plus">
+      </div>
+      <div class="answer">The best place to get help is inside Frontend Mentor's Discord community. There's a help 
+        channel where you can ask questions and seek support from other community members.</div>
+    </div>
+  </div>
+
+  <script>
+    function toggleAnswer(item) {
+      const answer = item.nextElementSibling;
+      const icon = item.querySelector(".icon");
+      if (answer.style.display === "none" || answer.style.display === "") {
+        answer.style.display = "block";
+        icon.src = "assets/images/icon-minus.svg";
+      } else {
+        answer.style.display = "none";
+        icon.src = "assets/images/icon-plus.svg";
+      }
+  }
+  </script>
+</body>
+</html>
