@@ -1,0 +1,108 @@
+@font-face {
+    font-family: 'WorkSans';
+    src: local('WorkSans-VariableFont_wght'), 
+    url('assets/fonts/WorkSans-VariableFont_wght.ttf');
+  }
+  * {
+    padding: 0;
+    margin: 0;
+  }
+  body {
+    padding: 0;
+    background-color: #F9EEFF;
+    font-family: 'WorkSans', sans-serif;
+  }
+  @media (min-width: 768px) {
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center; 
+      justify-content: center;
+      height: 100vh;
+    }
+  }
+
+  @media (min-width: 376px) {
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center; 
+      justify-content: center;
+      height: 100vh;
+    }
+  }
+  
+  .bg {
+    position:fixed;
+    top: 0%;
+    width: 100%;
+    z-index: -1;
+  }
+  .container {
+    width: 550px;
+    min-height: 600px;
+    background-color: white;
+    z-index: 1;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    border-radius: 14px;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.10);
+  }
+  .title {
+    display: flex;
+    flex-direction: row;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 34px;  
+    color: #3A1219;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+  .star {
+    margin-right: 25px;
+  }
+  .question {
+    font-weight: bold;
+    font-size: 20px;
+    color: #3A1219;
+    line-height: 80px;
+  }
+  .qa {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #E6E6E6;
+    height: auto;
+    flex-grow: 1;
+  }
+  .qa:last-child {
+    border-bottom: none;
+  }
+  .qa-item {
+    min-height: 80px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+  }
+  .icon {
+    position: absolute;
+    right: 0%;
+    top: 30%;
+  }
+  .qa-item:hover {
+    cursor: pointer;
+  }
+  .qa-item:hover > .question {
+    color: #AF23EE;
+  }
+  .answer {
+    margin-bottom: 20px;
+    font-size: 15px;
+    color: #9467ac;
+    display: none;
+  }
+  .fold {
+    display: none;
+  }
